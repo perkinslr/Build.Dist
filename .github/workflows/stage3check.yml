@@ -12,6 +12,7 @@ jobs:
     steps:
     - name: Prebuild
       run: | 
+        sudo apt-get install systemd-container
         STAGE3=$(wget https://bouncer.gentoo.org/fetch/root/all/releases/arm64/autobuilds/latest-stage3-arm64.txt -O - | tail -n 1 | cut -d ' ' -f 1)
         wget -q https://bouncer.gentoo.org/fetch/root/all/releases/arm64/autobuilds/${STAGE3} -O stage3.tar.xz
         mkdir chroot
