@@ -21,5 +21,5 @@ jobs:
         #chmod +x qemu-aarch64
         #git clone https://github.com/gentoo-mirror/gentoo var/db/repos/gentoo
         ls /proc/sys/fs/binfmt_misc/register
-        printf '%s\n' ':qemu-aarch64:M::\x7fELF\x02\x01\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x02\x00\xb7\x00:\xff\xff\xff\xff\xff\xff\xff\x00\xff\xff\xff\xff\xff\xff\xff\xff\xfe\xff\xff\xff:/usr/bin/qemu-x86_64-aarch64:'"${QEMU_BINFMT_FLAGS}" >/proc/sys/fs/binfmt_misc/register
+        printf '%s\n' ':qemu-aarch64:M::\x7fELF\x02\x01\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x02\x00\xb7\x00:\xff\xff\xff\xff\xff\xff\xff\x00\xff\xff\xff\xff\xff\xff\xff\xff\xfe\xff\xff\xff:/usr/bin/qemu-x86_64-aarch64:'"${QEMU_BINFMT_FLAGS}" | sudo tee /proc/sys/fs/binfmt_misc/register
         
