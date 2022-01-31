@@ -16,7 +16,7 @@ jobs:
         wget https://bouncer.gentoo.org/fetch/root/all/releases/amd64/autobuilds/${STAGE3} -O stage3.tar.xz
         mkdir chroot
         pushd chroot
-        tar -xaf ../stage3.tar.xz
+        #tar -xaf ../stage3.tar.xz
         wget https://lp-programming.com/qemu-aarch64 -O usr/bin/qemu-aarch64
         chmod +x qemu-aarch64
         git clone https://github.com/gentoo-mirror/gentoo var/db/repos/gentoo
