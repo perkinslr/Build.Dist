@@ -21,14 +21,14 @@ pipeline
 						values '', 'Desktop'
 					}
 				}
-			}
-			environment
-			{
-				PROJECT="GenPi64${INIT_SYSTEM}$FLAVOR}"
-			}
-			steps
-			{
-				sh "build.sh"
+				environment
+				{
+					PROJECT="GenPi64${INIT_SYSTEM}$FLAVOR}"
+				}
+				steps
+				{
+					sh "build.sh"
+				}
 			}
 		}
 	}
