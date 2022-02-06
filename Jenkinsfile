@@ -42,8 +42,7 @@ pipeline
 			{
 				steps
 				{
-					sh "ls -lahR"
-					sh "build.sh"
+					sh "./build.sh"
 				}
 			}}
 		}
