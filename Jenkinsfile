@@ -37,6 +37,8 @@ pipeline
 			environment
 			{
 				PROJECT="GenPi64${INIT_SYSTEM}${FLAVOR}"
+				NO_PARALLEL=yes
+				CHROOT_COMMAND=systemd-nspawn
 			}
 			stages { stage('Build')
 			{
