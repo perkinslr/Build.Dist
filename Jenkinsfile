@@ -18,6 +18,21 @@ pipeline
 					name 'FLAVOR'
 					values '', 'Desktop'
 				}
+				axis
+				{
+					name 'LIBC'
+					values 'GlibC'
+				}
+				axis
+				{
+					name 'PartitionScheme'
+					values 'MsDos'
+				}
+				axis
+				{
+					name 'Arch'
+					values 'aarch64'
+				}
 			}
 			environment
 			{
