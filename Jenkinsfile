@@ -42,7 +42,7 @@ pipeline
 			{
 				steps
 				{
-					sh "./build.sh"
+					sh "sudo ./build.sh"
 				}
 			}}
 		}
