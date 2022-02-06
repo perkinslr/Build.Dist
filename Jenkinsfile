@@ -47,18 +47,41 @@ pipeline
 				// since that has a big influence on the packages.
 				sh "sudo ./build.sh"
 			}}
-			stage('Package Lite') { steps
+			matrix
 			{
-				// Here we resume from the end of gentoo-base.json
-				// and want to launch one job per partition table scheme
-				// since the on-disk format will be different for each scheme
-				// we want to use btrfs subvolume snapshotting to give each
-				// partition type it's own build workspace.
-				// there *should* be a way to make jenkins dynamically schedule
-				// a single dimensional matrix of jobs to accomplish this
-				// so that the runner is fully occupied.
-				sh "Package Lite"
-			}}
+				agent any
+				axes
+				{
+					axis
+					{
+						name 'PARTITION_TABLE'
+						values 'msdos', 'hybrid', 'gpt'
+					}
+					axis
+					{
+						name 'BOOT_LOADER'
+						values 'raspberrypi', 'grub', 'uefi', 'systemd-boot'
+					}
+					axis
+					{
+						name 'INITRAMFS'
+						values 'None', 'dracut', 'raspberrypi-initramfs'
+					}
+				}
+				stages { stage('Package Lite') { steps
+				{
+					// Here we resume from the end of gentoo-base.json
+					// and want to launch one job per partition table scheme
+					// since the on-disk format will be different for each scheme
+					// we want to use btrfs subvolume snapshotting to give each
+					// partition type it's own build workspace.
+					// there *should* be a way to make jenkins dynamically schedule
+					// a single dimensional matrix of jobs to accomplish this
+					// so that the runner is fully occupied.
+					sh "Package Lite"
+				}}}
+			}
+			
 			stage('Build Desktop') { steps
 			{
 				// Here we need to spawn a matrix of jobs that starts from
