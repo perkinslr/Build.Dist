@@ -23,7 +23,7 @@ pipeline
 				}
 				environment
 				{
-					PROJECT="GenPi64${INIT_SYSTEM}$FLAVOR}"
+					PROJECT="GenPi64${INIT_SYSTEM}${FLAVOR}"
 				}
 				steps
 				{
