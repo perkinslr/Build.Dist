@@ -9,7 +9,6 @@ def system(*args):
 
 CONFIG_DIR = os.environ['CONFIG_DIR']
 PROJECT_DIR = os.environ['PROJECT_DIR']
-BINARY_DIR = os.environ['BINARY_DIR']
 PROJECT = os.environ['PROJECT']
 CHROOT_DIR = os.environ['CHROOT_DIR']
 PARSERS = os.environ['PARSERS']
