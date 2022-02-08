@@ -93,7 +93,7 @@ pipeline
 			}}
 				//}
 			//}
-			
+
 			stage('Build Desktop')
 			{
 				environment
@@ -112,7 +112,7 @@ pipeline
 			stage('Package Desktop') { steps
 			{
 				// here we resume from the end of the desktop job and produce an image
-				// file for each desktop job for each partition type. Ultimately 
+				// file for each desktop job for each partition type. Ultimately
 				// producing a matrix of a matrix of a matrix of images.
 				// we have 5 matrix diminsions for the base image(arch, libc, init, lto, hardened)
 				// then some number of desktop environments (xfce, lxqt, gnome, kde, so on)
