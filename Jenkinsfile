@@ -123,6 +123,10 @@ pipeline
 				echo "Package Desktop"
 			}}
 		}
+		post { always
+		{
+			sh "sudo rm -rf *"
+		}}
 	}}}
 	post { always
 	{
