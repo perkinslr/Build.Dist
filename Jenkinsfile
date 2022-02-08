@@ -40,6 +40,11 @@ pipeline
 		}
 		stages
 		{
+			stage('Clean Up') { steps
+			{
+				// Clear out anything from the previous build...
+				sh "sudo rm -rf"
+			}}
 			stage('Build Lite') { steps
 			{
 				// Here we want to only build the gentoo-base.json "subtarget"
