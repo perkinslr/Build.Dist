@@ -35,6 +35,7 @@ pipeline
 		environment
 		{
 			PROJECT="GenPi64${INIT_SYSTEM}"
+			BINPKGS_DIR="../shared/binpkgs/"
 			NO_PARALLEL="yes"
 			CHROOT_COMMAND="systemd-nspawn"
 		}
