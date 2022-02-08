@@ -43,7 +43,7 @@ pipeline
 			stage('Clean Up') { steps
 			{
 				// Clear out anything from the previous build...
-				sh "sudo rm -rf"
+				sh "sudo rm -rf *"
 			}}
 			stage('Build Lite') { steps
 			{
