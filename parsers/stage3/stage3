@@ -14,7 +14,6 @@ if [ -f "${BINARY_ASSETS}/stage3/${stage3tb}.DIGESTS" ]; then
         echo "Stage3 archive is invalid, did your download fail?"
         exit 1
     fi
-    
 fi
 
 tar -xapf "${BINARY_ASSETS}/stage3/${stage3tb}" --xattrs --exclude="dev/*" || tar --recursive-unlink -Uxapf "${BINARY_ASSETS}/stage3/${stage3tb}" --xattrs --exclude="dev/*"

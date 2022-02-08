@@ -22,4 +22,3 @@ stage3_image=$(wget "${stage3_url}" -O - | tail -n 1 | cut -f 1 -d ' ' )
 wget ${stage3_mirror}/${stage3_image}.DIGESTS -O "${BINARY_ASSETS}/stage3/${stage3}.DIGESTS"
 wget ${stage3_mirror}/${stage3_image} -O "${BINARY_ASSETS}/stage3/${stage3}"
 
-   
