@@ -36,6 +36,7 @@ pipeline
 		{
 			PROJECT="GenPi64${INIT_SYSTEM}"
 			BINPKGS_DIR="../shared/binpkgs/"
+			BINARY_ASSETS="../shared/binary_assets/"
 			NO_PARALLEL="yes"
 			CHROOT_COMMAND="systemd-nspawn"
 		}
