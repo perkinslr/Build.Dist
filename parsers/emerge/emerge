@@ -12,6 +12,12 @@ fi
 
 echo "emerging with $USE"
 
+function finish
+{
+	rm -f ${PROJECT_DIR}/chroot/em-$$
+}
+trap finish EXIT
+
 echo "source /etc/profile" > "${PROJECT_DIR}/chroot/em-$$"
 echo SHELL="/bin/bash" >> "${PROJECT_DIR}/chroot/em-$$"
 echo TERM="linux" >> "${PROJECT_DIR}/chroot/em-$$"
