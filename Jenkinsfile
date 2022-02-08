@@ -87,19 +87,26 @@ pipeline
 				// there *should* be a way to make jenkins dynamically schedule
 				// a single dimensional matrix of jobs to accomplish this
 				// so that the runner is fully occupied.
-				sh "Package Lite"
+				echo "Package Lite"
 			}}
 				//}
 			//}
 			
-			stage('Build Desktop') { steps
+			stage('Build Desktop')
 			{
-				// Here we need to spawn a matrix of jobs that starts from
-				// the gentoo-base.json for the current init system, libc, and so on
-				// and produces an image for each desktop varient we offer.
-				// E.g. xfce, lxqt, so on.
-				sh "Build Desktop"
-			}}
+				environment
+				{
+					PROJECT="GenPi64${INIT_SYSTEM}Desktop"
+				}
+				steps
+				{
+					// Here we need to spawn a matrix of jobs that starts from
+					// the gentoo-base.json for the current init system, libc, and so on
+					// and produces an image for each desktop varient we offer.
+					// E.g. xfce, lxqt, so on.
+					sh "sudo ./build.sh"
+				}
+			}
 			stage('Package Desktop') { steps
 			{
 				// here we resume from the end of the desktop job and produce an image
@@ -112,7 +119,7 @@ pipeline
 				// ultimately culminating in an 8 dimensional matrix of images that we can produce.
 				// though of course there are big holes in the matrix, and we would only produce images
 				// that someone is willing to put work into.
-				sh "Package Desktop"
+				echo "Package Desktop"
 			}}
 		}
 	}}}
