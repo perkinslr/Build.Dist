@@ -114,5 +114,9 @@ pipeline
 				sh "Package Desktop"
 			}}
 		}
-	}
-}}}
+	}}}
+	post { always
+	{
+		sh "sudo rm -rf *"
+	}}
+}
