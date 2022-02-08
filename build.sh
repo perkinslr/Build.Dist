@@ -27,12 +27,6 @@ fi
 
 ckmkdir "$PROJECT_DIR"
 
-if [ -z "$BINPKGS_DIR" ] ; then
-	export BINPKGS_DIR=${PROJECT_DIR}/packages
-fi
-
-ckmkdir "$BINPKGS_DIR"
-
 if test -f "${PROJECT}.json"; then
     $PARSERS/includejson/includejson ${PROJECT}.json
     echo "run complete."
