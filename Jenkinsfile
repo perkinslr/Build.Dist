@@ -44,6 +44,7 @@ pipeline
 			{
 				// Clear out anything from the previous build...
 				sh "sudo rm -rf *"
+				sh "git checkout ."
 			}}
 			stage('Build Lite') { steps
 			{
