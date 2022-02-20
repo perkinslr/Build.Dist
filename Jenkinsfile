@@ -48,6 +48,10 @@ pipeline
 				sh "sudo rm -rf *"
 				sh "git checkout ."
 			}}
+			stage('Setup') { steps
+			{
+				sh "sudo mkdir -p $BINPKGS_DIR $BINARY_ASSETS"
+			}}
 			stage('Print Environment') { steps
 			{
 				// Clear out anything from the previous build...
