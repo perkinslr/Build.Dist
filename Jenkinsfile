@@ -36,6 +36,7 @@ pipeline
 		{
 			PROJECT="GenPi64${INIT_SYSTEM}"
 			BINPKGS_DIR="../shared/binpkgs/"
+			DISTFILES_DIR="../shared/distfiles/"
 			BINARY_ASSETS="../shared/binary_assets/"
 			NO_PARALLEL="yes"
 			CHROOT_COMMAND="systemd-nspawn"
@@ -50,13 +51,14 @@ pipeline
 			}}
 			stage('Setup') { steps
 			{
-				sh "sudo mkdir -p $BINPKGS_DIR $BINARY_ASSETS"
+				sh "sudo mkdir -p $BINPKGS_DIR $DISTFILES_DIR $BINARY_ASSETS"
 			}}
 			stage('Print Environment') { steps
 			{
 				// Clear out anything from the previous build...
 				sh "env"
 				sh "ls -lah $BINPKGS_DIR"
+				sh "ls -lah $DISTFILES_DIR"
 				sh "ls -lah $BINARY_ASSETS"
 			}}
 			stage('Build Lite') { steps

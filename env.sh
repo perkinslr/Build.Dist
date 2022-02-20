@@ -14,6 +14,10 @@ if [[ -z "$BINPKGS_DIR" ]] ; then
         export BINPKGS_DIR=${PROJECT_DIR}/packages
 fi
 
+if [[ -z "$DISTFILES_DIR" ]] ; then
+        export DISTFILES_DIR=${PROJECT_DIR}/distfiles
+fi
+
 if [[ -z "$BINARY_ASSETS" ]]; then
 	export BINARY_ASSETS="${PROJECT_DIR}/build-binary-assets"
 fi

@@ -169,6 +169,7 @@ def execute(manifest):
                 'NO_PARALLEL',
                 'BTRFS_SNAPSHOTS',
                 'BINPKGS_DIR',
+                'DISTFILES_DIR',
                 'CHROOT_CMD' ) )
       env |= item.get('env', {})
 

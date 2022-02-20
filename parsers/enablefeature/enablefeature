@@ -16,6 +16,7 @@ CHROOT_DIR = os.environ['CHROOT_DIR']
 PARSERS = os.environ['PARSERS']
 SCRIPTS = os.environ['SCRIPTS']
 BINPKGS_DIR = os.environ['BINPKGS_DIR']
+DISTFILES_DIR = os.environ['DISTFILES_DIR']
 
 
 os.chdir(CHROOT_DIR)
