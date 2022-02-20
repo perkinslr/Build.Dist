@@ -7,7 +7,7 @@
     {"name": "portage", "deps": ["git"], "parser": "portage", "args": [""]},
     {"name": "etc", "deps": ["portage"], "parser": "etc", "args": [""]},
     {"name": "locale", "deps": ["etc"], "parser": "rawcommand", "args": ["eselect locale set en_US.utf8"]},
-    {"name": "emerge_git", "deps": ["locale"], "parser": "emerge", "args": ["--verbose --oneshot dev-vcs/git"]},
+    {"name": "emerge_git", "deps": ["locale"], "parser": "emerge", "args": ["--verbose --oneshot --ignore-default-opts --jobs dev-vcs/git"]},
     {"name": "emerge_sync", "deps": ["emerge_git"], "parser": "emerge", "args": ["--sync"]},
     {"name": "update_portage", "deps": ["emerge_sync"], "parser": "emerge", "args": ["--verbose --oneshot sys-apps/portage"]},
     {"name": "update_world", "deps": ["update_portage"], "parser": "emerge", "args": ["--verbose --update @world"]},
