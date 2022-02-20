@@ -48,6 +48,13 @@ pipeline
 				sh "sudo rm -rf *"
 				sh "git checkout ."
 			}}
+			stage('Print Environment') { steps
+			{
+				// Clear out anything from the previous build...
+				sh "env"
+				sh "ls -lah $BINPKGS_DIR"
+				sh "ls -lah $BINARY_ASSETS"
+			}}
 			stage('Build Lite') { steps
 			{
 				// Here we want to only build the gentoo-base.json "subtarget"
