@@ -35,9 +35,9 @@ pipeline
 		environment
 		{
 			PROJECT="GenPi64${INIT_SYSTEM}"
-			BINPKGS_DIR="../shared/binpkgs/"
-			DISTFILES_DIR="../shared/distfiles/"
-			BINARY_ASSETS="../shared/binary_assets/"
+			BINPKGS_DIR="${HOME}/shared/binpkgs/"
+			DISTFILES_DIR="${HOME}/shared/distfiles/"
+			BINARY_ASSETS="${HOME}/shared/binary_assets/"
 			NO_PARALLEL="yes"
 			CHROOT_COMMAND="systemd-nspawn"
 		}
