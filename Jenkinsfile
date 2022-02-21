@@ -66,7 +66,7 @@ pipeline
 				// Here we want to only build the gentoo-base.json "subtarget"
 				// but with the config for the selected init system, libc, and so on
 				// since that has a big influence on the packages.
-				sh "sudo ./build.sh"
+				sh "sudo --preserve-env ./build.sh"
 			}}
 			// matrix blocks cannot be nested inside other matrix blocks...
 			//matrix
@@ -119,7 +119,7 @@ pipeline
 					// the gentoo-base.json for the current init system, libc, and so on
 					// and produces an image for each desktop varient we offer.
 					// E.g. xfce, lxqt, so on.
-					sh "sudo ./build.sh"
+					sh "sudo --preserve-env ./build.sh"
 				}
 			}
 			stage('Package Desktop') { steps
